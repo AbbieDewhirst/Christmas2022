@@ -1,0 +1,126 @@
+:root {
+    /* You can define variables (and other stuff, but its mostly for variables) in the ::root selector, 
+      which basically is "nowhere" but also "everywhere" on the page */
+  
+    --ad-foreground-1: #111111; /*nav bar background, subheading colour, text colour*/
+    --ad-foreground-2: #232323; /*nav bar hover*/
+  
+    --ad-background-1: #cecece;
+    --ad-background-2: #080404;
+  
+    --ad-navbar-background: var(--ad-foreground-1);
+    --ad-navbar-hover: var(--ad-foreground-2);
+    --ad-navbar-text: var(--ad-background-1);
+  
+    --ad-heading-color: var(--ad-foreground-1);
+    --ad-subheading-color: var(--ad-foreground-1);
+    --ad-text-color: var(--ad-foreground-1);
+  
+  }
+  
+  body {
+    background-color: var(--ad-background-2); /* the var() function tells CSS to look for a variable */
+  
+    font-family: sans-serif;
+  
+    margin: 0;
+    padding: 0;
+  
+    text-align: center;
+  
+  }
+  
+  section {
+    color: #cfcfcf;
+    min-height: 60vh;
+    padding-top: 10vh;
+    padding-bottom: 7vh;
+  }
+  
+  .nav {
+    background-color: var(--ad-navbar-background);
+    display: inherit;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+  }
+  
+  .nav-item {
+    color: var(--ad-navbar-text);
+    text-decoration: none;
+  
+    display: inline-block;
+    padding: 15px;
+  }
+  
+  .nav-item:hover {
+    background-color: var(--ad-navbar-hover);
+    color: #cecece;
+  }
+  /* an example of an OOP-like class: this class when applied to any text will format it
+  to look like a section heading */
+  .sectionHeader {
+    /*margin-top: 25vh;*/
+    font-size: 45px;
+    color: var(--ad-heading-color);
+  }
+  
+  .sectionSubheader {
+    font-size: 18px;
+    color: var(--ad-subheading-color);
+  }
+
+  .secretText {
+    font-size: 10px;
+    padding-top: 20px;
+    color: rgb(88, 93, 100);
+  }
+  
+  .sectionContent {
+    font-size: 12px;
+    color: var(--ad-text-color);
+  }
+
+  .homeBackground {
+    padding-top: 60px;
+    /*background-image: url(Formatting/BlueBackground.jpg);*/
+    background-color: rgb(228, 239, 255);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 100vh;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
